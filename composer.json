@@ -1,5 +1,5 @@
 {
-    "name": "albertcht/lumen-helpers",
+    "name": "itdesign/lumen-helpers",
     "description": "To support Laravel 's unsupported features in Lumen.",
     "keywords": ["heplers", "lumen", "laravel"],
     "license": "MIT",
