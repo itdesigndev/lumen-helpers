@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Cookie;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Contracts\Auth\Access\Gate;
+use Illuminate\Contracts\Broadcasting\Factory as BroadcastFactory;
 
 if (! function_exists('public_path')) {
     /**
@@ -435,5 +436,18 @@ if (! function_exists('request')) {
         $value = app('request')->__get($key);
 
         return is_null($value) ? value($default) : $value;
+    }
+}
+
+if (! function_exists('broadcast')) {
+    /**
+     * Begin broadcasting an event.
+     *
+     * @param  mixed|null  $event
+     * @return \Illuminate\Broadcasting\PendingBroadcast
+     */
+    function broadcast($event = null)
+    {
+        return app(BroadcastFactory::class)->event($event);
     }
 }
